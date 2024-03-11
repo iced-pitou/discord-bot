@@ -26,8 +26,8 @@ llm = Llama(
 
 def get_response(username: str, user_input: str) -> str:
     try:
-        prompt = f"<|prompt|>{LLM_INSTRUCT}</s>\n" \
-                 f"<|prompt|>Here is what {username} says: {user_input}</s>\n" \
+        prompt = f"<|system|>{LLM_INSTRUCT}. You are talking to {username}.</s>\n" \
+                 f"<|prompt|>{user_input}</s>\n" \
                   "<|answer|>"
 
         completion = llm.create_completion(
