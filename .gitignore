@@ -7,3 +7,5 @@ models/
 # Environments
 .env
 .venv
+.vscode/
+
